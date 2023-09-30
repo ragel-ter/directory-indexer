@@ -15,6 +15,7 @@
     "nodemon": "^3.0.1"
   },
   "dependencies": {
-    "restify": "^11.1.0"
+    "restify": "^11.1.0",
+    "winston": "^3.10.0"
   }
 }
