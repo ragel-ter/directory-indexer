@@ -3,3 +3,5 @@ node_modules
 # ignore logging artefacts
 error.log
 combined.log
+
+.env
