@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "tmp": "^0.2.1",
     "winston": "^3.10.0"
@@ -13,7 +14,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
+    "dev": "nodemon -r dotenv/config app.js",
     "debug": "node --inspect-brk app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
