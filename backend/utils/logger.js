@@ -1,8 +1,17 @@
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, colorize, prettyPrint } = format;
+const loggers = [];
 
 function getLogger(forContext) {
     let context = forContext ?? 'default-context';
+
+    let existingLogger = loggers?.find((logger) => {
+        return logger.forContext === context;
+    })
+
+    if (existingLogger) {
+        return existingLogger.logger;
+    }
 
     let logger = createLogger({
         level: 'debug',
@@ -23,6 +32,8 @@ function getLogger(forContext) {
             format: format.simple(),
         }));
     }
+
+    loggers.push([{forContext: context, logger: logger}]);
 
     return logger;
 }

@@ -1,14 +1,12 @@
-const restify = require('restify');
-const server = restify.createServer();
-const DocumentController = require('./controllers/directoryController')
+const express = require('express');
+const port = process.env.READ_DIR_LISTENER || 8000;
+const logger = require('./utils/logger').getLogger('read-directory-api');
+const directoryRouter = require('./directoryRouter');
 
-server.get('/ping', function(req, res, next) {
-    res.send('pong');
-    return next();
+const app = express();
+
+app.use('/', directoryRouter);
+
+app.listen(port, () => {
+    logger.info(`Server is listening on ${port}`);
 })
-
-server.get('/:path/ls', DocumentController.getListing);
-
-server.listen(8080, function() {
-    console.log('%s listening at %s', server.name, server.url);
-});
