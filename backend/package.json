@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "tmp": "^0.2.1",
+    "winston": "^3.10.0"
+  },
+  "name": "directory_indexer_api",
+  "description": "To run the application in dev mode with hot reload functionality:\r ```shell\r npm run dev\r ```",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debug": "node --inspect-brk app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragel-ter/directory-indexer.git#main"
+  },
+  "author": "Rachel Terblanche rachel.erica.terblanche@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ragel-ter/directory-indexer/issues"
+  },
+  "homepage": "https://github.com/ragel-ter/directory-indexer/tree/main#readme"
+}
