@@ -1,7 +1,7 @@
-const HOST_ROOT_PATH = process.env.HOST_ROOT_PATH || '.';
+const ROOT = process.env.CONTAINER_MOUNT_POINT || '.';
 
 function normalisePath(path) {
-    return HOST_ROOT_PATH + path;
+    return ROOT + path;
 }
 
 module.exports = {
