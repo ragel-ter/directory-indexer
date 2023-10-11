@@ -14,7 +14,7 @@ function directoryDetailsTransformStream() {
 
                 fs.stat(chunk.path, (err, stats) => {
                     if (err) {
-                        logger.error(err);
+                        logger.warn(err);
                         callback();
                     } else {
                         const direntDetails = {
@@ -23,7 +23,7 @@ function directoryDetailsTransformStream() {
                             is_directory: stats.isDirectory(),
                             file_ext: path.extname(chunk.path),
                             file_size: stats.size,
-                            file_created: stats.birthtimeMs,
+                            file_created: stats.birthtime,
                             file_permissions: '0' + (stats.mode & parseInt('777', 8)).toString(8) // Thanks go to this GitHub issue: https://github.com/nodejs/node-v0.x-archive/issues/3045
                         }
                         this.push(`${JSON.stringify(direntDetails)}\r\n`);

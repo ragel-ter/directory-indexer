@@ -10,6 +10,7 @@ APP_LISTENER_PORT={{app_listener_port}} - The port that the webserver / app is l
 ADMIN_USER={{admin_user}} - Must be set to make authenticated requests
 ADMIN_PASS={{admin_pass}} - Must be set to make authenticated requests
 CONTAINER_MOUNT_POINT={{container_mount_point}} - Only set if intending to run in Docker - should match the container mount point in the docker run command
+ALLOWED_ORIGIN={{allowed_origin}} - The domain of the frontend application eg. localhost:{port} when running locally
 ```
 
 ## Run on Local Server
